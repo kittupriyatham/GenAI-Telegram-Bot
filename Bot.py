@@ -1,10 +1,10 @@
 import botogram
 import openai
 
-bot = botogram.create("6146755126:AAFrZHO6dTed6sSzwBF_i5u81uedg_0yP9E")
+bot = botogram.create("replace with your api key from your bot api created using bot father")
 
-openai.organization = "org-vTqTsNTqKQKonMUHpC0USOQy"
-openai.api_key = "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"
+openai.organization = "replace with organization value of your openai api"
+openai.api_key = "replace with key value of your openai api"
 
 
 @bot.command("chat")
