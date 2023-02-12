@@ -4,7 +4,7 @@ import openai
 bot = botogram.create("6146755126:AAFrZHO6dTed6sSzwBF_i5u81uedg_0yP9E")
 
 openai.organization = "org-vTqTsNTqKQKonMUHpC0USOQy"
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @bot.command("chat")
@@ -14,7 +14,7 @@ def chatgpt(chat, message, args):
     print("name =", message.sender.name)
     print("username", message.sender.username)
     prompt = " ".join(args)
-    response = openai.Completion.create(model="text-davinci-003", prompt=prompt, temperature=0, max_tokens=2048)
+    response = openai.Completion.create(model="text-davinci-003", prompt=prompt, temperature=0, max_tokens=500)
     # print(response)
     print(prompt)
     res = (dict(response)["choices"][0]["text"][2:])
