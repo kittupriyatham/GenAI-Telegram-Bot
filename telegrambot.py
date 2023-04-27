@@ -1,19 +1,15 @@
 import openai
-from flask import Flask, render_template
+
 from origamibot import OrigamiBot as Bot
 from origamibot.listener import Listener
 
 openai.organization = "org-vTqTsNTqKQKonMUHpC0USOQy"
 openai.api_key = "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"
 
-app = Flask(__name__)
-
-bot = Bot("6090013295:AAENpI84l8p4Ya1rF23UgpX6Fuu4Hp_BKa4")
-
 
 class MessageListener(Listener):  # Event listener must inherit Listener
-    def __init__(self, botv):
-        self.bot = botv
+    def __init__(self):
+        self.bot = Bot("6090013295:AAENpI84l8p4Ya1rF23UgpX6Fuu4Hp_BKa4")
 
     def on_message(self, message):  # When message is received
         print("message =", message)
@@ -35,16 +31,3 @@ class MessageListener(Listener):  # Event listener must inherit Listener
         if err is not None:
             self.bot.send_message(message.chat.id,
                                   'Error in command:\n{err}')
-
-
-@app.route('/')
-def index():
-    # Add an event listener
-    bot.add_listener(MessageListener(bot))
-    # Start bot
-    bot.start()
-    return render_template('index.html')
-
-
-if __name__ == '__main__':
-    app.run()
