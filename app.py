@@ -1,10 +1,11 @@
 import botogram
 import openai
+from config import TOKEN, ORG, KEY
 
-bot = botogram.create("5692270027:AAF6TeCOMcyATcdjQqapxBJ9xxBzYDbfFQk")
+bot = botogram.create(TOKEN)
 
-openai.organization = "org-vTqTsNTqKQKonMUHpC0USOQy"
-openai.api_key = "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"
+openai.organization = ORG
+openai.api_key = KEY
 
 
 @bot.command("chat")
