@@ -10,14 +10,14 @@ openai.api_key = KEY
 
 @bot.command("chat")
 def chatgpt(chat, message, args):
-    print("chat name", chat.name)
+    print("chat name =", chat.name)
     # print(displayUserInfo(message))
     print("name =", message.sender.name)
-    print("username", message.sender.username)
+    print("username =", message.sender.username)
     prompt = " ".join(args)
-    response = openai.Completion.create(model="text-davinci-003", prompt=prompt, temperature=0, max_tokens=2048)
+    print("prompt =", prompt)
+    response = openai.Completion.create(model="text-davinci-003", prompt=prompt, max_tokens=2000)
     # print(response)
-    print(prompt)
     res = (dict(response)["choices"][0]["text"][2:])
     print(res)
     print()
