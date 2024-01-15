@@ -8,10 +8,10 @@ import cv2
 import numpy
 
 
-TOKEN: Final = "5692270027:AAF6TeCOMcyATcdjQqapxBJ9xxBzYDbfFQk"
-BOT_USERNAME: Final = "@openai_chatgpt3_5_bot"
+TOKEN: Final = "Telegram bot key"
+BOT_USERNAME: Final = "bot username"
 
-ORIGINAL_KEY: Final = "AIzaSyDUD14sIvqRFmJn3AAVln-fJLWMl_CZn2g"
+ORIGINAL_KEY: Final = "google gemini api"
 
 KEY = ORIGINAL_KEY
 genai.configure(api_key=KEY)
